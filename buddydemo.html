@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Buddy Image upload preview</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="buddycss.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+    <div class="imageupload panel panel-default col card card-info">
+        <div class="panel-heading clearfix card-header">
+            <h3 class="panel-title pull-left card-title">Buddy Image uploader</h3>
+            <div class="btn-group pull-right">
+                <button type="button" class="btn btn-outline-dark waves-effect waves-light active btn-file">File</button>
+                <button type="button" class="btn btn-outline-dark waves-effect waves-light btn-url">URL</button>
+            </div>
+        </div>
+
+        <div class="file-tab panel-body card-body">
+            <div class="card-text">
+                <img src="https://via.placeholder.com/350x150" alt="" class="form-control-square pt-3  h-100 w-100 img-responsive img-thumbnail">
+            </div>
+
+            <label id="upload-btn" class="m-0 btn btn-outline-primary btn-file btn-light waves-effect waves-light upload-btn">
+                <i class="fa fa-upload" id="upload-icon"></i>
+                <span>Browse</span>
+                <input type="file" name="image_file" class="d-none">
+            </label>
+            <button type="button" class="btn btn-default btn-outline-danger remove-btn" id="remove-btn">Remove</button>
+
+            <button type="button" class="btn btn-default btn-outline-info btn-reset">Reset</button>
+        </div>
+
+        <div class="url-tab panel-body d-none card-body">
+            <div class="input-group">
+                <input type="text" class="form-control" id="input-url" placeholder="Image URL">
+                <div class="input-group-btn input-group-append">
+                    <button type="button" class="btn btn-primary submit-btn"><i class="fa fa-upload"></i> Submit</button>
+                    <button type="button" class="btn btn-default btn-outline-info btn-reset">Reset</button>
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-default btn-outline-danger remove-btn">Remove</button>
+
+            <input type="hidden" name="image_url">
+        </div>
+
+        <input type="hidden" value="https://via.placeholder.com/350x150" name="image_old" id="image_old">
+    </div>
+</div>
+
+
+<script src="buddyjs.js"></script>
+
+<script>
+    var imageupload = $('.imageupload');
+    imageupload.imageupload({
+        preview: 'https://via.placeholder.com/350x150',
+    });
+</script>
+</body>
+</html>
